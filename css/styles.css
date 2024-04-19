@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    
+    --bg-color: #0b344f;
+    --bg-gray: #c5c5c5;
+    --bg-colorLight: #076d8f;
+    --bg-colorFade: #eff8fb;
+    --bg-colorFadeSecondary: #eaf3f5;
+    --bg-color: #333; /* Background color */
+    --text-color: #fff; /* Text color */
+}
+
+
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500 !important;
+}
+
+.rounded,input,button{
+    border-radius: 20px !important;
+    
+}
