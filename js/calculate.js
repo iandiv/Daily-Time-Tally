@@ -161,7 +161,7 @@ function calculateTime(startTime, endTime, breakTime, totalTime, totalDecimal) {
 
 
 
-        totalTime.innerText = result;
+        totalTime.innerText = result ;
         totalDecimal.innerText = timeToDecimal(result);
 
         totaAllTime.innerText = totalAll;
