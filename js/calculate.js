@@ -9,21 +9,21 @@ function showDecimal() {
         const totalSpan = set.querySelector('.total');
         const totalDecimal = set.querySelector('.totalDecimal');
 
-        var collapseSpan = new bootstrap.Collapse(totalSpan); // Hide the totalSpan
-        var collapseDecimal = new bootstrap.Collapse(totalDecimal); // Show the totalDecimal
+        var collapseSpan = new bootstrap.Collapse(totalSpan); 
+        var collapseDecimal = new bootstrap.Collapse(totalDecimal); 
 
     });
     const totalAllSpan = document.querySelector('.totalAll');
     const totalAllDecimal = document.querySelector('.totalAllDecimal');
 
-    var collapseAllSpan = new bootstrap.Collapse(totalAllSpan); // Hide the totalSpan
-    var collapseAllDecimal = new bootstrap.Collapse(totalAllDecimal); // Show the totalDecimal
+    var collapseAllSpan = new bootstrap.Collapse(totalAllSpan); 
+    var collapseAllDecimal = new bootstrap.Collapse(totalAllDecimal); 
 
 }
 
 
 function calculateAll() {
-    // Hide the totalSpan
+
 
 
     const sets = document.querySelectorAll('.day');
@@ -37,10 +37,7 @@ function calculateAll() {
         const totalSpan = set.querySelector('.total');
         const totalDecimal = set.querySelector('.totalDecimal');
 
-        // if (!totalSpan.classList.contains('show')) {
-        //     var collapse = new bootstrap.Collapse(totalSpan);
-        //     collapse.show();
-        // }
+    
         if (startTimeInput && endTimeInput && breakTimeInput && totalSpan && totalDecimal) {
             console.log("Start time: ", startTimeInput.value);
             console.log("End time: ", endTimeInput.value);
@@ -182,6 +179,4 @@ function timeToDecimal(time) {
     return decimalTime.toFixed(2);
 }
 
-var time = "31:16";
-var decimalTime = timeToDecimal(time);
-console.log(decimalTime);
+
