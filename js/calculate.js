@@ -104,7 +104,9 @@ function calculateTime(startTime, endTime, breakTime, totalTime, totalDecimal) {
     const currentDate = new Date().toISOString().slice(0, 10);
     if (!startTime || !endTime || !breakTime) {
         // Display "invalid" if input is empty
-        totalTime.innerText = "";
+        totalTime.innerText = "--:--";
+        totalDecimal.innerText = "-.--";
+
     } else {
         const decimalToggle = document.querySelector('.decimalToggle');
         if (!decimalToggle.classList.contains('show')) {
@@ -142,12 +144,11 @@ function calculateTime(startTime, endTime, breakTime, totalTime, totalDecimal) {
 
 
 
-        totalTime.innerHTML  = "&emsp;"+result +" h";
-        totalDecimal.innerHTML  = "&emsp;"+timeToDecimal(result);
+        totalTime.innerText = result +" h";
+        totalDecimal.innerText = timeToDecimal(result);
 
-        totaAllTime.innerHTML  = "&emsp;"+totalAll +" h";
-        totaAllDecimal.innerHTML  = "&emsp;"+timeToDecimal(totalAll);
-
+        totaAllTime.innerHTML = "&emsp;" + totalAll + " h";
+        totaAllDecimal.innerHTML = "&emsp;" + timeToDecimal(totalAll);
 
     }
 }

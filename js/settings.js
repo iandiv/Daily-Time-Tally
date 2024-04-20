@@ -106,24 +106,20 @@ function clearContent(button) {
     calculateAll();
 }
 // DECIMAL SETTINGS
-
 function showDecimal() {
+    const decimalSwitch = document.getElementById('decimalSwitch');
     const sets = document.querySelectorAll('.day');
 
     sets.forEach((set, index) => {
-
         const totalSpan = set.querySelector('.total');
         const totalDecimal = set.querySelector('.totalDecimal');
-
-        var collapseSpan = new bootstrap.Collapse(totalSpan);
-        var collapseDecimal = new bootstrap.Collapse(totalDecimal);
-
+        totalSpan.classList.toggle('show');
+        totalDecimal.classList.toggle('show');
     });
     const totalAllSpan = document.querySelector('.totalAll');
     const totalAllDecimal = document.querySelector('.totalAllDecimal');
-
-    var collapseAllSpan = new bootstrap.Collapse(totalAllSpan);
-    var collapseAllDecimal = new bootstrap.Collapse(totalAllDecimal);
+    totalAllSpan.classList.toggle('show');
+    totalAllDecimal.classList.toggle('show');
 
     // Save checkbox state
     const decimalSwitchState = document.getElementById('decimalSwitch').checked;
@@ -131,10 +127,12 @@ function showDecimal() {
 }
 
 // Load saved checkbox state
+// Load saved checkbox state
 const decimalSwitchState = localStorage.getItem('decimalSwitchState');
 if (decimalSwitchState) {
-    document.getElementById('decimalSwitch').checked = decimalSwitchState === 'true';
+    document.getElementById('decimalSwitch').checked = JSON.parse(decimalSwitchState);
 }
+
 
 // Call showDecimal function if checkbox is checked
 if (document.getElementById('decimalSwitch').checked) {
