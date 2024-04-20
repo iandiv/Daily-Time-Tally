@@ -1,2 +1,3 @@
 # Daily Time Tally
-  
+
+## Preview
