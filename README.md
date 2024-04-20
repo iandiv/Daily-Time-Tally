@@ -1,1 +1,2 @@
-# DTR-Calculator
+# Daily Time Tally
+  
