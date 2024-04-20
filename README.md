@@ -1,6 +1,7 @@
 # Daily Time Tally
 
-![banner](https://github.com/iandiv/Daily-Time-Tally/assets/28383248/e0345dfe-0861-401f-a8c3-6b80e0939da9)
+![DTT (2)](https://github.com/iandiv/Daily-Time-Tally/assets/28383248/bdbedbba-8e90-4c18-b77e-b9de817cc9f2)
+
 Daily Time Tally is a minimalist web app designed to help you track your daily hours effortlessly. With a clean interface and straightforward functionality, it sums up hours per day and the entire week for you.
 
 ## Features
