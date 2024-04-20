@@ -68,7 +68,6 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8p
         });
     });
 }
-
 function showDuration(durationPickable) {
     const picker = buildDurationPicker(durationPickable);
     const { bottom: top, left } = durationPickable.getBoundingClientRect();
@@ -83,11 +82,12 @@ function showDuration(durationPickable) {
 
 function buildDurationPicker(durationPickable) {
     const picker = document.createElement("div");
-    const hourOptions = [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(numberDurationToOption);
+    const hourOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(numberDurationToOption);
     const minuteOptions = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(numberDurationToOption);
 
     picker.classList.add("duration-picker");
     picker.classList.add("border");
+
 
     picker.innerHTML = `
 <select class="duration-picker__select">
@@ -117,13 +117,12 @@ function buildDurationPicker(durationPickable) {
 }
 
 function getdurationPartsFromPickable(durationPickable) {
-    const pattern = /^(\d+):(\d+) $/;
-    const [hour, minute,] = Array.from(durationPickable.value.match(pattern)).splice(1);
+    const pattern = /^(\d+):(\d+) h$/; // Adjusted the pattern to match "h"
+    const [_, hour, minute] = Array.from(durationPickable.value.match(pattern));
 
     return {
         hour,
         minute,
-
     };
 }
 
@@ -133,14 +132,16 @@ function getDurationSelectsFromPicker(durationPicker) {
     return {
         hour,
         minute,
-
     };
 }
 
 function getdurationStringFromPicker(durationPicker) {
     const selects = getDurationSelectsFromPicker(durationPicker);
 
-    return `${selects.hour.value}:${selects.minute.value} `;
+    // Append "h" to the hour value
+    const hour = `${selects.hour.value}`;
+
+    return `${hour}:${selects.minute.value} h`;
 }
 
 function numberDurationToOption(number) {

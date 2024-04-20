@@ -1,3 +1,5 @@
+// DARK MODE SETTINGS
+
 function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-bs-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -28,35 +30,37 @@ if (savedSwitchState) {
     document.getElementById('btnSwitch').checked = savedSwitchState === 'true'; // Convert the string to a boolean
 }
 
-
-
-// Function to handle switch state change
+// WEEKEND SETTINGS
 function handleWeekendSwitchStateChange() {
-    const switchState = this.checked; // Get the state of the switch
-    localStorage.setItem('weekendSwitchState', switchState); // Save the switch state to localStorage
+    const switchState = this.checked;
+    localStorage.setItem('weekendSwitchState', switchState);
+
+    if (!switchState) {
+
+        clearInputsAndP();
+        const decimalToggle = document.querySelector('.decimalToggle');
+        if (decimalToggle.classList.contains('show')) {
+            var collapsedecimalToggle = new bootstrap.Collapse(decimalToggle);
+        }
+        calculateAll();
+    }
 }
 
-// Function to handle collapse state change
 function handleCollapseStateChange() {
-    const collapseState = this.classList.contains('show'); // Check if the collapse div is currently visible
-    localStorage.setItem('weekendCollapseState', collapseState); // Save the collapse state to localStorage
+    const collapseState = this.classList.contains('show');
+    localStorage.setItem('weekendCollapseState', collapseState);
 }
 
-// Event listener for switch state change
 document.getElementById('weekendSwitch').addEventListener('change', handleWeekendSwitchStateChange);
 
-// Event listener for collapse state change
 document.getElementById('weekend').addEventListener('shown.bs.collapse', handleCollapseStateChange);
 document.getElementById('weekend').addEventListener('hidden.bs.collapse', handleCollapseStateChange);
 
-// Check if there's a saved switch state in localStorage
 const weekendSwitchState = localStorage.getItem('weekendSwitchState');
 if (weekendSwitchState) {
-    // Apply the saved switch state
-    document.getElementById('weekendSwitch').checked = weekendSwitchState === 'true'; // Convert the string to a boolean
+    document.getElementById('weekendSwitch').checked = weekendSwitchState === 'true';
 }
 
-// Check if there's a saved collapse state in localStorage
 const savedCollapseState = localStorage.getItem('weekendCollapseState');
 if (savedCollapseState) {
     const weekendCollapse = document.getElementById('weekend');
@@ -67,28 +71,36 @@ if (savedCollapseState) {
     }
 }
 
-if (document.getElementById('weekendSwitch').checked) {
-    handleWeekendSwitchStateChange.call(document.getElementById('weekendSwitch'));
-}
+function clearInputsAndP() {
+    var weekendDiv = document.getElementById('weekend');
 
+    var inputElements = weekendDiv.querySelectorAll('input');
+
+    inputElements.forEach(function (input) {
+        input.value = '';
+    });
+
+    var pElements = weekendDiv.querySelectorAll('p');
+
+    pElements.forEach(function (p) {
+        p.textContent = '';
+    });
+}
 
 function clearContent(button) {
     const decimalToggle = document.querySelector('.decimalToggle');
     if (decimalToggle.classList.contains('show')) {
-        var collapsedecimalToggle = new bootstrap.Collapse(decimalToggle); 
+        var collapsedecimalToggle = new bootstrap.Collapse(decimalToggle);
     }
-    // Traverse up the DOM to find the parent 'div' element
     var parentDiv = button.closest('.day');
 
-    // Find all input elements within the parent 'div' and clear their values
     var inputs = parentDiv.querySelectorAll('input');
-    inputs.forEach(function(input) {
+    inputs.forEach(function (input) {
         input.value = '';
     });
 
-    // Find the paragraphs with classes 'total' and 'totalDecimal' and clear their content
     var paragraphs = parentDiv.querySelectorAll('.total, .totalDecimal');
-    paragraphs.forEach(function(paragraph) {
+    paragraphs.forEach(function (paragraph) {
         paragraph.textContent = '';
     });
     calculateAll();

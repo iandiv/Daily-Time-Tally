@@ -1,24 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 [data-bs-theme="dark"] {
-    --bs-body-bg: #1a1a1a;
+    --bs-body-bg: #191b1f;
+    --bs-card-bg: #1e2125;
+
     --bs-input-bg: #212529;
     --bs-border-color: #2e343a;
+    --bs-cal-bg:#424649;
+}
+
+
+[data-bs-theme="light"] {
+    --bs-body-bg: #f8f9fa;
+    --bs-card-bg: #fff;
+    --bs-input-bg: #f8f9fa;
+    --bs-border-color: #eaeaea;
+    --bs-cal-bg:#424649;
+}
+.bg-white{
+    background-color: var(--bs-card-bg) !important;
 }
 .btn-dark {
+    background-color: var(--bs-cal-bg) !important;
+
     transition: transform 200ms ease; /* Scale the transform property */
 }
 
 .btn-dark:hover{
     transform: scale(0.98);
-}
-
-[data-bs-theme="light"] {
-    --bs-body-bg: #fff;
-
-    --bs-input-bg: #f8f9fa;
-    --bs-border-color: #eaeaea;
-
 }
 .modal.fade .modal-dialog {
     transform: scale(0.8) 
@@ -89,7 +98,7 @@ input.form-control {
 }
 
 .settings,.close{
-    background-color: var(--bs-body-bg);
+    background-color: var(--bs-card-bg);
     transition: transform 200ms ease;
 }
 
