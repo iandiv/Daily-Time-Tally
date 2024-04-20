@@ -105,4 +105,38 @@ function clearContent(button) {
     });
     calculateAll();
 }
+// DECIMAL SETTINGS
 
+function showDecimal() {
+    const sets = document.querySelectorAll('.day');
+
+    sets.forEach((set, index) => {
+
+        const totalSpan = set.querySelector('.total');
+        const totalDecimal = set.querySelector('.totalDecimal');
+
+        var collapseSpan = new bootstrap.Collapse(totalSpan);
+        var collapseDecimal = new bootstrap.Collapse(totalDecimal);
+
+    });
+    const totalAllSpan = document.querySelector('.totalAll');
+    const totalAllDecimal = document.querySelector('.totalAllDecimal');
+
+    var collapseAllSpan = new bootstrap.Collapse(totalAllSpan);
+    var collapseAllDecimal = new bootstrap.Collapse(totalAllDecimal);
+
+    // Save checkbox state
+    const decimalSwitchState = document.getElementById('decimalSwitch').checked;
+    localStorage.setItem('decimalSwitchState', decimalSwitchState);
+}
+
+// Load saved checkbox state
+const decimalSwitchState = localStorage.getItem('decimalSwitchState');
+if (decimalSwitchState) {
+    document.getElementById('decimalSwitch').checked = decimalSwitchState === 'true';
+}
+
+// Call showDecimal function if checkbox is checked
+if (document.getElementById('decimalSwitch').checked) {
+    showDecimal();
+}

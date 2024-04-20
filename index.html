@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Daily Time Tally</title>
     <!-- Link to compiled CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,23 +33,38 @@
                             class="bi bi-x-lg"></i></button>
                 </div>
 
-                <div class="modal-body ps-5 pe-5">
+                <div class="modal-body ps-sm-5 pe-sm-5">
 
-                    <div class=" d-flex align-items-center ">
+                    <div class=" d-flex align-items-center p-1">
                         <span class="me-2 w-100">Dark Mode</span>
                         <div class="form-check mt-1 form-switch">
                             <input class="form-check-input  " type="checkbox" id="btnSwitch">
                         </div>
                     </div>
                     <hr class="border-top m-2">
-                    <div class=" d-flex align-items-center ">
-                        <span class="me-2 w-100">Weekend</span>
+                    <div class=" d-flex align-items-center p-1">
+                        <div class="me-2 w-100">
+                            <span class="me-2 w-100">Weekend</span><br>
+                            <span class="fw-light" style="font-size: 8pt;">Show weekends (Saturday, Sunday)</span>
+                        </div>
+
                         <div class="form-check mt-1 form-switch">
                             <input class="form-check-input  " type="checkbox" id="weekendSwitch"
                                 data-bs-toggle="collapse" data-bs-target="#weekend">
                         </div>
                     </div>
+                    <hr class="border-top m-2">
 
+                    <div class=" d-flex align-items-center p-1 ">
+                        <div class="me-2 w-100">
+                            <span class="">Decimal</span><br>
+                            <span class="fw-light" style="font-size: 8pt;">Decimal instead of hours</span>
+                        </div>
+
+                        <div class="form-check form-switch mt-1">
+                            <input class="form-check-input" type="checkbox" id="decimalSwitch" onclick="showDecimal()">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer border-0">
                     <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
@@ -56,15 +73,16 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container p-1 ">
 
-        <div class=" row  align-items-center justify-content-center" style="height: 100vh;">
-            <div class=" row justify-content-center">
-                <div class="border shadow bg-white rounded  p-sm-5  pt-4 pb-5 col-sm-8">
+        <div class=" row m-0 p-0 align-items-center justify-content-center" style="height: 99vh;">
+            <div class=" row justify-content-center p-0 m-0">
+                <div class="border shadow bg-white rounded  p-sm-5 p-4  pt-4 pb-5 col-sm-8 m-0" >
                     <div class="row">
                         <div class="col-8">
                             <span class="h3">Daily Time Tally</span>
                         </div>
+
                         <div class="col-4 d-flex justify-content-end">
                             <button type="button border-0" class="border-0  btn settings  rounded-pill"
                                 data-bs-toggle="modal" data-bs-target="#settings">
@@ -82,7 +100,8 @@
                     <div class="row ">
 
 
-                        <div class="day bjustify-content-center justify-content-center  row g-2  ">
+                        
+                        <div class="day  justify-content-center   row g-2  ">
 
                             <div class="col-1 align-items-center  justify-content-center d-flex">
                                 <span class=""></span>
@@ -91,25 +110,22 @@
                             <div class="col-3">
 
                                 Start
-
                             </div>
                             <div class="col-3">
                                 End
 
                             </div>
                             <div class="col-3">
-                                Break Time
+                                Break
+
                             </div>
-                            <div class="col-1 align-items-center  justify-content-center d-flex">
-                                <div class="row justify-content-center w-100 text-center ">
-                                    <p class="p-0 m-0 total collapse show"> </p>
-                                    <p class="p-0 m-0  totalDecimal collapse"> </p>
-                                </div>
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
+                                
                             </div>
 
                         </div>
                         <!-- Monday -->
-                        <div class="day  justify-content-center justify-content-center  row g-2  ">
+                        <div class="day  justify-content-center   row g-2  ">
 
                             <div class="col-1 align-items-center  justify-content-center d-flex">
                                 <span class="">M</span>
@@ -128,7 +144,7 @@
                                 <input type="text" class="break duration-pickable   form-control ">
 
                             </div>
-                            <div class="col-1 align-items-center result justify-content-center  d-flex ">
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
                                 <div class="row justify-content-center w-100 text-center collapse show totalRes">
                                     <p class="p-0 m-0 total collapse show"> </p>
                                     <p class="p-0 m-0  totalDecimal collapse"> </p>
@@ -167,7 +183,7 @@
                                 <input type="text" class="break duration-pickable   form-control ">
 
                             </div>
-                            <div class="col-1 align-items-center result justify-content-center  d-flex ">
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
                                 <div class="row justify-content-center w-100 text-center collapse show totalRes">
                                     <p class="p-0 m-0 total collapse show"> </p>
                                     <p class="p-0 m-0  totalDecimal collapse"> </p>
@@ -204,7 +220,7 @@
                                 <input type="text" class="break duration-pickable   form-control ">
 
                             </div>
-                            <div class="col-1 align-items-center result justify-content-center  d-flex ">
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
                                 <div class="row justify-content-center w-100 text-center collapse show totalRes">
                                     <p class="p-0 m-0 total collapse show"> </p>
                                     <p class="p-0 m-0  totalDecimal collapse"> </p>
@@ -240,7 +256,7 @@
                                 <input type="text" class="break duration-pickable   form-control ">
 
                             </div>
-                            <div class="col-1 align-items-center result justify-content-center  d-flex ">
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
                                 <div class="row justify-content-center w-100 text-center collapse show totalRes">
                                     <p class="p-0 m-0 total collapse show"> </p>
                                     <p class="p-0 m-0  totalDecimal collapse"> </p>
@@ -276,7 +292,7 @@
                                 <input type="text" class="break duration-pickable   form-control ">
 
                             </div>
-                            <div class="col-1 align-items-center result justify-content-center  d-flex ">
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
                                 <div class="row justify-content-center w-100 text-center collapse show totalRes">
                                     <p class="p-0 m-0 total collapse show"> </p>
                                     <p class="p-0 m-0  totalDecimal collapse"> </p>
@@ -297,7 +313,7 @@
 
                     </div>
                     <!-- Saturday -->
-                    <div class="collapse row" id="weekend">
+                    <div class="collapse row " id="weekend">
                         <div class="day justify-content-center row g-2">
                             <div class="col-1 align-items-center  justify-content-center d-flex">
                                 <span class="">Sa</span>
@@ -315,7 +331,7 @@
                                 <input type="text" class="break duration-pickable   form-control ">
 
                             </div>
-                            <div class="col-1 align-items-center result justify-content-center  d-flex ">
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
                                 <div class="row justify-content-center w-100 text-center collapse show totalRes">
                                     <p class="p-0 m-0 total collapse show"> </p>
                                     <p class="p-0 m-0  totalDecimal collapse"> </p>
@@ -335,7 +351,7 @@
 
 
                         <!-- Sunday -->
-                        <div class="day justify-content-center row g-2">
+                        <div class="day justify-content-center row g-2 ">
                             <div class="col-1 align-items-center  justify-content-center d-flex">
                                 <span class="">Su</span>
                             </div>
@@ -352,7 +368,7 @@
                                 <input type="text" class="break duration-pickable   form-control ">
 
                             </div>
-                            <div class="col-1 align-items-center result justify-content-center  d-flex ">
+                            <div class="col-3 col-lg-1 align-items-center result justify-content-center  d-flex ">
                                 <div class="row justify-content-center w-100 text-center collapse show totalRes">
                                     <p class="p-0 m-0 total collapse show"> </p>
                                     <p class="p-0 m-0  totalDecimal collapse"> </p>
@@ -370,28 +386,23 @@
 
                         </div>
                     </div>
-                    <div class="row collapse decimalToggle">
+                    <div class="row  collapse decimalToggle">
 
-                        <div class="justify-content-center row g-2">
+                        <div class=" row g-2 mt-3   justify-content-center">
 
-                            <div class="col-1">
 
+
+                            <div class="col-3 d-flex justify-content-end ">
+                                <p class="p-0 m-0 h6">Total:</p>
+                                
                             </div>
-                            <div class="col-3 d-flex align-items-center justify-content-start">
-                                <span class="me-2 ">Decimal</span>
-                                <div class="form-check form-switch mt-1">
-                                    <input class="form-check-input" type="checkbox" onclick="showDecimal()">
+                            <div class="col-3 d-flex justify-content-start">
+                                <div class="row w-100   align-items-center  justify-content-center">
+                                    <p class="p-0 m-0 h6 totalAll collapse show"> </p>
+                                    <p class="p-0 m-0 h6 totalAllDecimal collapse"> </p>
                                 </div>
                             </div>
-                            <div class="col-6 d-flex justify-content-end pe-2">
-                                Total:&emsp;
-                            </div>
-                            <div class="col-1">
-                                <div class="row w-100 text-center  align-items-center  justify-content-center">
-                                    <p class="p-0 m-0 totalAll collapse show"> </p>
-                                    <p class="p-0 m-0 totalAllDecimal collapse"> </p>
-                                </div>
-                            </div>
+
                         </div>
 
                     </div>

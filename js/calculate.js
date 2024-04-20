@@ -1,25 +1,7 @@
 let times = [];
 console.log(times);
 
-function showDecimal() {
-    const sets = document.querySelectorAll('.day');
 
-    sets.forEach((set, index) => {
-
-        const totalSpan = set.querySelector('.total');
-        const totalDecimal = set.querySelector('.totalDecimal');
-
-        var collapseSpan = new bootstrap.Collapse(totalSpan); 
-        var collapseDecimal = new bootstrap.Collapse(totalDecimal); 
-
-    });
-    const totalAllSpan = document.querySelector('.totalAll');
-    const totalAllDecimal = document.querySelector('.totalAllDecimal');
-
-    var collapseAllSpan = new bootstrap.Collapse(totalAllSpan); 
-    var collapseAllDecimal = new bootstrap.Collapse(totalAllDecimal); 
-
-}
 
 
 function calculateAll() {
@@ -36,7 +18,6 @@ function calculateAll() {
         const breakTimeInput = set.querySelector('.break');
         const totalSpan = set.querySelector('.total');
         const totalDecimal = set.querySelector('.totalDecimal');
-
     
         if (startTimeInput && endTimeInput && breakTimeInput && totalSpan && totalDecimal) {
             console.log("Start time: ", startTimeInput.value);
@@ -161,11 +142,11 @@ function calculateTime(startTime, endTime, breakTime, totalTime, totalDecimal) {
 
 
 
-        totalTime.innerText = result ;
-        totalDecimal.innerText = timeToDecimal(result);
+        totalTime.innerHTML  = "&emsp;"+result +" h";
+        totalDecimal.innerHTML  = "&emsp;"+timeToDecimal(result);
 
-        totaAllTime.innerText = totalAll;
-        totaAllDecimal.innerText = timeToDecimal(totalAll);
+        totaAllTime.innerHTML  = "&emsp;"+totalAll +" h";
+        totaAllDecimal.innerHTML  = "&emsp;"+timeToDecimal(totalAll);
 
 
     }
