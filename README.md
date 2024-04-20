@@ -10,7 +10,7 @@ Daily Time Tally is a minimalist web app designed to help you track your daily h
 - **Dark Mode:** Enjoy a comfortable viewing experience, even during late-night sessions.
 
 ## Try It Out
-Visit the [Daily Time Tally website](https://iandiv.github.io/Daily-Time-Tally/) and start tracking your time efficiently!
+Visit the [Daily Time Tally](https://iandiv.github.io/Daily-Time-Tally/) and start tracking your time efficiently!
 
 
 ## User Feedback and Issues
