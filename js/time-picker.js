@@ -9,7 +9,7 @@ function TimePicker() {
             display: inline-block;
             padding: 10px;
             background: #fff;
-            border: 1px solid #dddddd;
+        
             border-radius: 6px;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             }
@@ -90,6 +90,8 @@ function buildPicker(timePickable) {
     .map(numberToOption);
 
     picker.classList.add("time-picker");
+    picker.classList.add("border");
+
     picker.innerHTML = `
 		<select class="time-picker__select">
 			${hourOptions.join("")}

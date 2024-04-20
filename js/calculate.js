@@ -179,4 +179,23 @@ function timeToDecimal(time) {
     return decimalTime.toFixed(2);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const resultDivs = document.querySelectorAll('.result');
 
+    resultDivs.forEach(function(resultDiv) {
+        const clearBtnRow = resultDiv.querySelector('.clearBtn');
+        const totalRes = resultDiv.querySelector('.totalRes');
+
+        if (clearBtnRow && totalRes) {
+            resultDiv.addEventListener('mouseenter', function () {
+                clearBtnRow.classList.add('show');
+                totalRes.classList.remove('show');
+            });
+
+            resultDiv.addEventListener('mouseleave', function () {
+                clearBtnRow.classList.remove('show');
+                totalRes.classList.add('show');
+            });
+        }
+    });
+});

@@ -1,24 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-:root {
+[data-bs-theme="dark"] {
+    --bs-body-bg: #1a1a1a;
+    --bs-input-bg: #212529;
+    --bs-border-color: #2e343a;
+}
+.btn-dark {
+    transition: transform 200ms ease; /* Scale the transform property */
+}
+
+.btn-dark:hover{
+    transform: scale(0.98);
+}
+
+[data-bs-theme="light"] {
+    --bs-body-bg: #fff;
+
+    --bs-input-bg: #f8f9fa;
+    --bs-border-color: #eaeaea;
+
+}
+.modal.fade .modal-dialog {
+    transform: scale(0.8) 
+}
+
+.modal.fade.show .modal-dialog {
+    transform: scale(1)
+}
+.border{
+    border-color: var(--bs-border-color) !important;
+}
+.time-picker,.duration-picker {
     
+    background-color: var(--bs-input-bg) !important;
+    
+}
+
+
+.time-picker__select,.duration-picker__select {
+    
+    background-color: var(--bs-input-bg) !important;
+    
+}
+
+.time-picker__select:hover,.duration-picker__select:hover {
+
+    background-color: var(--bs-input-bg) !important;
+
+}
+
+:root {
+
     --bg-color: #0b344f;
     --bg-gray: #c5c5c5;
     --bg-colorLight: #076d8f;
     --bg-colorFade: #eff8fb;
     --bg-colorFadeSecondary: #eaf3f5;
-    --bg-color: #333; /* Background color */
-    --text-color: #fff; /* Text color */
+    --bg-color: #333;
+    /* Background color */
+    --text-color: #fff;
+    /* Text color */
+    /* --bs-input-bg: #f8f9fa; */
 }
 
 
 body,
 html {
+
     font-family: 'Poppins', sans-serif;
     font-weight: 500 !important;
 }
 
-.rounded,input,button{
+.rounded,
+input,
+button {
     border-radius: 20px !important;
+
+}
+
+body {
+    background-color: var(--bs-body-bg);
+}
+
+
+input.form-control {
+    background-color: var(--bs-input-bg);
     
+}
+
+.settings,.close{
+    background-color: var(--bs-body-bg);
+    transition: transform 200ms ease;
+}
+
+.settings:hover,.close:hover{
+    background-color: var(--bs-input-bg);
+    transform: scale(0.88);
+
 }

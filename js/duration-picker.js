@@ -9,7 +9,6 @@ position: absolute;
 display: inline-block;
 padding: 10px;
 background: #fff;
-border: 1px solid #dddddd;
 border-radius: 6px;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -88,6 +87,8 @@ function buildDurationPicker(durationPickable) {
     const minuteOptions = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(numberDurationToOption);
 
     picker.classList.add("duration-picker");
+    picker.classList.add("border");
+
     picker.innerHTML = `
 <select class="duration-picker__select">
     ${hourOptions.join("")}
@@ -139,7 +140,7 @@ function getDurationSelectsFromPicker(durationPicker) {
 function getdurationStringFromPicker(durationPicker) {
     const selects = getDurationSelectsFromPicker(durationPicker);
 
-    return `${selects.hour.value}:${selects.minute.value}`;
+    return `${selects.hour.value}:${selects.minute.value} `;
 }
 
 function numberDurationToOption(number) {
