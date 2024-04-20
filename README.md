@@ -4,10 +4,12 @@
 Daily Time Tally is a minimalist web app designed to help you track your daily hours effortlessly. With a clean interface and straightforward functionality, it sums up hours per day and the entire week for you.
 
 ## Features
-- **Daily Summation**: Easily sum up hours for each day.
-- **Weekly Total:** Get a comprehensive overview of your weekly hours.
-- **Optional Weekend:** Include weekend hours if needed.
-- **Dark Mode:** Enjoy a comfortable viewing experience, even during late-night sessions.
+- **Daily Total:** Sum of hours per day
+- **Weekly Total:** Sum of daily totals for the week
+- **Weekend:** Includes weekend hours if desired
+- **Decimal Conversion:** Conveniently converts total time into decimal format
+- **Dark Mode:** Enhances viewing comfort, especially during late-night sessions
+
 
 ## Try It Out
 Visit the [Daily Time Tally](https://iandiv.github.io/Daily-Time-Tally/) and start tracking your time efficiently!
